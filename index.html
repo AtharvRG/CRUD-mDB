@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Inventory Pro</title> <!-- Changed title slightly -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Kitchen Inventory</h1> <!-- Changed title slightly -->
+
+        <div class="main-content">
+
+            <div class="form-container card">
+                <h2 id="form-title">Add/Edit Item</h2> <!-- Changed title -->
+                <form id="item-form">
+                    <input type="hidden" id="item-id"> <!-- For updates -->
+
+                    <div class="form-group">
+                        <label for="name">Item Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group inline">
+                        <div>
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" min="0" step="any" required>
+                        </div>
+                        <div>
+                            <label for="unit">Unit:</label>
+                            <input type="text" id="unit" placeholder="e.g., kg, L, pcs" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select id="category">
+                            <option value="Pantry">Pantry</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="Freezer">Freezer</option>
+                            <option value="Spice Rack">Spice Rack</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Kitchen Type:</label>
+                        <select id="location">
+                            <option value="Domestic">Domestic</option>
+                            <option value="Professional">Professional</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Save Item</button> <!-- Changed text -->
+                    <button type="button" id="cancel-btn" class="secondary" style="display: none;">Cancel</button> <!-- Changed text -->
+                </form>
+            </div>
+
+            <div class="table-container card">
+                <h2>Current Inventory</h2>
+                <table id="item-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Qty</th> <!-- Abbreviated -->
+                            <th>Unit</th>
+                            <th>Category</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="item-list">
+                        <!-- Items will be loaded here by JavaScript -->
+                        <tr><td colspan="6">Loading items...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div> <!-- End of .main-content -->
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
